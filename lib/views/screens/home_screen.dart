@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         "No notes found",
                         style: TextStyle(
-                          fontSize: 15.0.sp,
+                          fontSize: 10.0.sp,
                         ),
                       ),
                     ],

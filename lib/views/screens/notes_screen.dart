@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:notes/controllers/note_screen_controller.dart';
 import 'package:notes/extensions/obj_extension.dart';
 import 'package:notes/models/note.dart';
-import 'package:sliver_tools/sliver_tools.dart';
 
 @RoutePage()
 class NotesScreen extends StatefulWidget {
@@ -73,46 +72,35 @@ class _NotesScreenState extends State<NotesScreen> {
       child: Scaffold(
         appBar: AppBar(),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CustomScrollView(
-            slivers: [
-              SliverPadding(
-                padding: const EdgeInsets.all(8.0).copyWith(bottom: 0.0),
-                sliver: MultiSliver(
-                  children: [
-                    TextFormField(
-                      controller: titleTextController,
-                      maxLines: 1,
-                      maxLength: 10,
-                      style: const TextStyle(fontSize: 25.0),
-                      decoration: const InputDecoration(
-                        hintText: "Title",
-                        border: InputBorder.none,
-                        counter: SizedBox.shrink(),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: TextFormField(
-                      controller: noteTextController,
-                      style: const TextStyle(fontSize: 17.0),
-                      keyboardType: TextInputType.multiline,
-                      maxLines: 30,
-                      decoration: const InputDecoration(
-                        hintText: "Note",
-                        border: InputBorder.none,
-                      ),
+          padding: const EdgeInsets.all(10.0),
+          child: SingleChildScrollView(
+            child: Expanded(
+              child: Column(
+                children: [
+                  TextFormField(
+                    controller: titleTextController,
+                    maxLines: 1,
+                    maxLength: 10,
+                    style: const TextStyle(fontSize: 25.0),
+                    decoration: const InputDecoration(
+                      hintText: "Title",
+                      border: InputBorder.none,
+                      counter: SizedBox.shrink(),
                     ),
                   ),
-                ),
+                  TextFormField(
+                    controller: noteTextController,
+                    style: const TextStyle(fontSize: 17.0),
+                    keyboardType: TextInputType.multiline,
+                    maxLines: 20,
+                    decoration: const InputDecoration(
+                      hintText: "Note",
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
