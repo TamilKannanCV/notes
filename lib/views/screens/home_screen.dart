@@ -38,11 +38,16 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            title: const Text("Notes"),
+            title: const Text("KeepMyNotes"),
             actions: [
               IconButton(
                 onPressed: () {
-                  showAboutDialog(context: context, applicationName: "Notes", applicationVersion: Get.find<PackageInfo>().version, applicationLegalese: "Tamil Kannan C V");
+                  showAboutDialog(
+                    context: context,
+                    applicationName: "KeepMyNotes",
+                    applicationVersion: Get.find<PackageInfo>().version,
+                    applicationLegalese: "Tamil Kannan C V",
+                  );
                 },
                 icon: const Icon(Icons.info_outline),
               ),
