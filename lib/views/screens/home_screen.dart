@@ -38,15 +38,15 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            title: Text("Notes"),
+            title: const Text("Notes"),
             actions: [
               IconButton(
                 onPressed: () {
                   showAboutDialog(context: context, applicationName: "Notes", applicationVersion: Get.find<PackageInfo>().version, applicationLegalese: "Tamil Kannan C V");
                 },
-                icon: Icon(Icons.info_outline),
+                icon: const Icon(Icons.info_outline),
               ),
-              SizedBox(width: 10.0),
+              const SizedBox(width: 10.0),
             ],
           ),
           Obx(() {
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
             }
             if (homeScreenController.notes.isNotEmpty) {
               return SliverPadding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 sliver: SliverFillRemaining(
                   hasScrollBody: false,
                   child: StaggeredGrid.extent(
