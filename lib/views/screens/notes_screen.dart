@@ -74,32 +74,30 @@ class _NotesScreenState extends State<NotesScreen> {
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: SingleChildScrollView(
-            child: Expanded(
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: titleTextController,
-                    maxLines: 1,
-                    maxLength: 10,
-                    style: const TextStyle(fontSize: 25.0),
-                    decoration: const InputDecoration(
-                      hintText: "Title",
-                      border: InputBorder.none,
-                      counter: SizedBox.shrink(),
-                    ),
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: titleTextController,
+                  maxLines: 1,
+                  maxLength: 10,
+                  style: const TextStyle(fontSize: 25.0),
+                  decoration: const InputDecoration(
+                    hintText: "Title",
+                    border: InputBorder.none,
+                    counter: SizedBox.shrink(),
                   ),
-                  TextFormField(
-                    controller: noteTextController,
-                    style: const TextStyle(fontSize: 17.0),
-                    keyboardType: TextInputType.multiline,
-                    maxLines: 20,
-                    decoration: const InputDecoration(
-                      hintText: "Note",
-                      border: InputBorder.none,
-                    ),
+                ),
+                TextFormField(
+                  controller: noteTextController,
+                  style: const TextStyle(fontSize: 17.0),
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 20,
+                  decoration: const InputDecoration(
+                    hintText: "Note",
+                    border: InputBorder.none,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
